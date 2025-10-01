@@ -130,8 +130,8 @@ const Contact = () => {
               </a>
               
               <a
-                href="src/assets/myresume.pdf"
-                download
+                href="/myresume.pdf"
+                download="Abdallah_Ahmed_Resume.pdf"
                 className="btn-outline py-4 px-8 text-lg font-bold flex items-center group border-2 border-white/30 text-white hover:bg-white hover:text-gray-900 transition-all duration-300"
               >
                 <svg className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

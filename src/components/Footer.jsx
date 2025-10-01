@@ -95,8 +95,8 @@ const Footer = () => {
               </p>
               <div className="mt-6">
                 <a
-                  href="src/assets/myresume.pdf"
-                  download
+                  href="/myresume.pdf"
+                  download="Abdallah_Ahmed_Resume.pdf"
                   className="inline-flex items-center btn-primary text-center group"
                 >
                   <svg className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

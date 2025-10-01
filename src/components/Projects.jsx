@@ -107,13 +107,13 @@ const Projects = () => {
                     <h4 className="text-4xl font-bold text-white mb-4">Coming Soon</h4>
                     <p className="text-white/80 text-lg">This project is currently in development</p>
                   </div>
-                </div>
+              </div>
               ) : (
                 <iframe
                   src={projects[currentProject].previewUrl}
                   title={projects[currentProject].title}
                   className="w-full h-full border-0 transition-all duration-500"
-                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"
+                  sandbox="allow-scripts allow-forms allow-popups allow-top-navigation"
                   loading="lazy"
                 />
               )}
@@ -127,7 +127,7 @@ const Projects = () => {
                 <p className="text-lg md:text-xl text-white/90 mb-6 max-w-2xl">
                   {projects[currentProject].description}
                 </p>
-                
+
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {projects[currentProject].technologies.map((tech, index) => (
@@ -139,7 +139,7 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                
+
                 {/* Live Demo Button */}
                 {projects[currentProject].liveUrl === 'coming-soon' ? (
                   <div className="inline-flex items-center px-8 py-4 bg-gray-600/80 text-white/80 font-semibold rounded-lg cursor-not-allowed">
@@ -147,7 +147,7 @@ const Projects = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
                     Coming Soon
-                  </div>
+                </div>
                 ) : (
                   <a
                     href={projects[currentProject].liveUrl}
@@ -163,7 +163,7 @@ const Projects = () => {
                 )}
               </div>
             </div>
-          </div>
+        </div>
 
           {/* Navigation Arrows */}
           <button
@@ -211,13 +211,23 @@ const Projects = () => {
                     : 'hover:scale-105'
                 }`}
               >
-                <iframe
-                  src={project.previewUrl}
-                  title={project.title}
-                  className="w-full h-20 border-0 pointer-events-none"
-                  sandbox="allow-scripts allow-same-origin"
-                  loading="lazy"
-                />
+                {project.previewUrl === 'coming-soon' ? (
+                  <div className="w-full h-20 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center">
+                    <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                      </svg>
+                    </div>
+                  </div>
+                ) : (
+                  <iframe
+                    src={project.previewUrl}
+                    title={project.title}
+                    className="w-full h-20 border-0 pointer-events-none"
+                    sandbox="allow-scripts allow-forms allow-popups allow-top-navigation"
+                    loading="lazy"
+                  />
+                )}
                 <div className="absolute inset-0 bg-black/20 hover:bg-black/10 transition-all duration-300"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className={`w-2 h-2 rounded-full ${

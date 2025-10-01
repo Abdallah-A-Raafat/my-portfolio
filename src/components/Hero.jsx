@@ -4,10 +4,9 @@ const Hero = () => {
       {/* Professional background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-blue-50"></div>
       
-      {/* Subtle floating elements */}
-      <div className="absolute top-20 left-10 w-16 h-16 bg-blue-100/50 rounded-full animate-float"></div>
-      <div className="absolute top-40 right-20 w-12 h-12 bg-slate-200/50 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
-      <div className="absolute bottom-20 left-1/4 w-8 h-8 bg-blue-200/50 rounded-full animate-float" style={{animationDelay: '4s'}}></div>
+      {/* Subtle floating elements - reduced for performance */}
+      <div className="absolute top-20 left-10 w-16 h-16 bg-blue-100/30 rounded-full animate-float"></div>
+      <div className="absolute bottom-20 right-1/4 w-8 h-8 bg-blue-200/30 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex flex-col md:flex-row items-center justify-between">
@@ -32,8 +31,8 @@ const Hero = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a
-                href="src/assets/myresume.pdf"
-                download
+                href="/myresume.pdf"
+                download="Abdallah_Ahmed_Resume.pdf"
                 className="btn-primary text-center"
               >
                 <span className="flex items-center justify-center">
@@ -84,17 +83,18 @@ const Hero = () => {
           {/* Right side - Photo */}
           <div className="md:w-1/2 flex justify-center animate-fadeInRight">
             <div className="relative">
-              {/* Professional background circles */}
-              <div className="absolute -top-8 -left-8 w-96 h-96 bg-gradient-to-br from-blue-100/30 to-slate-200/30 rounded-full animate-pulse-slow"></div>
-              <div className="absolute -top-4 -left-4 w-80 h-80 bg-gradient-to-br from-slate-200/40 to-blue-100/40 rounded-full animate-float"></div>
-              <div className="absolute top-4 left-4 w-72 h-72 bg-gradient-to-br from-blue-50/20 to-slate-100/20 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
+            {/* Professional background circles - optimized */}
+            <div className="absolute -top-8 -left-8 w-96 h-96 bg-gradient-to-br from-blue-100/20 to-slate-200/20 rounded-full animate-pulse-slow"></div>
+            <div className="absolute top-4 left-4 w-72 h-72 bg-gradient-to-br from-blue-50/10 to-slate-100/10 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
               
               {/* Main photo */}
               <div className="relative z-10">
                 <img
-                  src="src/assets/myphoto.jpeg"
+                  src="/myphoto.jpeg"
                   alt="Abdallah Ahmed"
                   className="w-80 h-80 rounded-full object-cover border-4 border-white shadow-2xl hover:scale-105 transition-transform duration-500"
+                  loading="eager"
+                  fetchPriority="high"
                 />
                 {/* Subtle glow effect */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-100/20 to-slate-200/20 blur-xl -z-10 animate-pulse-slow"></div>

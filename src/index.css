@@ -2,10 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scrolling */
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+body {
+  font-display: swap;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Removed duplicate scroll-behavior */
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
