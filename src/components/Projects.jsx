@@ -9,7 +9,7 @@ const Projects = () => {
       title: 'Tic Tac Toe Game',
       description: 'Interactive tic-tac-toe game built with React featuring smooth animations and game state management.',
       previewUrl: 'https://tic-tac-toe-sable-zeta.vercel.app/',
-      technologies: ['React', 'CSS', 'JavaScript'],
+      technologies: ['React', 'tailwindcss', 'JavaScript'],
       liveUrl: 'https://tic-tac-toe-sable-zeta.vercel.app/',
       features: ['Interactive gameplay', 'Responsive design', 'Game state management']
     },
@@ -18,7 +18,7 @@ const Projects = () => {
       title: 'Currency Converter',
       description: 'Real-time currency converter application with live exchange rates and clean user interface.',
       previewUrl: 'https://currency-converter-psi-green.vercel.app/',
-      technologies: ['React', 'API Integration', 'CSS'],
+      technologies: ['React', 'API Integration', 'tailwindcss'],
       liveUrl: 'https://currency-converter-psi-green.vercel.app/',
       features: ['Live exchange rates', 'Multiple currencies', 'Clean UI']
     },
@@ -27,7 +27,7 @@ const Projects = () => {
       title: 'Todo Application',
       description: 'Feature-rich todo application with task management, filtering, and local storage persistence.',
       previewUrl: 'https://todo-beta-flax-14.vercel.app/',
-      technologies: ['React', 'Local Storage', 'CSS'],
+      technologies: ['React', 'Local Storage', 'tailwindcss'],
       liveUrl: 'https://todo-beta-flax-14.vercel.app/',
       features: ['Task management', 'Filter options', 'Data persistence']
     },
@@ -45,7 +45,7 @@ const Projects = () => {
       title: 'Seizure Detection Project',
       description: 'Advanced machine learning project for seizure detection with data analysis and visualization.',
       previewUrl: 'https://seizure-detection-project-7hyi.vercel.app/',
-      technologies: ['Python', 'Machine Learning', 'Data Analysis'],
+      technologies: ['React', 'tailwindcss', 'Api integration'],
       liveUrl: 'https://seizure-detection-project-7hyi.vercel.app/',
       features: ['ML algorithms', 'Data visualization', 'Medical analysis']
     }
