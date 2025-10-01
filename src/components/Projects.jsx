@@ -48,6 +48,15 @@ const Projects = () => {
       technologies: ['React', 'tailwindcss', 'Api integration'],
       liveUrl: 'https://seizure-detection-project-7hyi.vercel.app/',
       features: ['ML algorithms', 'Data visualization', 'Medical analysis']
+    },
+    {
+      id: 6,
+      title: 'SootheAI',
+      description: 'An innovative AI-powered application designed to provide personalized wellness solutions and mental health support.',
+      previewUrl: 'coming-soon',
+      technologies: ['React', 'AI/ML', 'Node.js', 'TailwindCSS'],
+      liveUrl: 'coming-soon',
+      features: ['AI-powered recommendations', 'Personalized content', 'User-friendly interface']
     }
   ]
 
@@ -87,13 +96,27 @@ const Projects = () => {
           <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white">
             {/* Project Preview */}
             <div className="relative h-96 md:h-[500px] overflow-hidden">
-              <iframe
-                src={projects[currentProject].previewUrl}
-                title={projects[currentProject].title}
-                className="w-full h-full border-0 transition-all duration-500"
-                sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"
-                loading="lazy"
-              />
+              {projects[currentProject].previewUrl === 'coming-soon' ? (
+                <div className="w-full h-full bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-32 h-32 mx-auto mb-6 bg-white/10 rounded-full flex items-center justify-center">
+                      <svg className="w-16 h-16 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                      </svg>
+                    </div>
+                    <h4 className="text-4xl font-bold text-white mb-4">Coming Soon</h4>
+                    <p className="text-white/80 text-lg">This project is currently in development</p>
+                  </div>
+                </div>
+              ) : (
+                <iframe
+                  src={projects[currentProject].previewUrl}
+                  title={projects[currentProject].title}
+                  className="w-full h-full border-0 transition-all duration-500"
+                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"
+                  loading="lazy"
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
               
               {/* Project Info Overlay */}
@@ -118,17 +141,26 @@ const Projects = () => {
                 </div>
                 
                 {/* Live Demo Button */}
-                <a
-                  href={projects[currentProject].liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 hover:scale-105 shadow-lg"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                  View Live Demo
-                </a>
+                {projects[currentProject].liveUrl === 'coming-soon' ? (
+                  <div className="inline-flex items-center px-8 py-4 bg-gray-600/80 text-white/80 font-semibold rounded-lg cursor-not-allowed">
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    Coming Soon
+                  </div>
+                ) : (
+                  <a
+                    href={projects[currentProject].liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 hover:scale-105 shadow-lg"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    View Live Demo
+                  </a>
+                )}
               </div>
             </div>
           </div>
