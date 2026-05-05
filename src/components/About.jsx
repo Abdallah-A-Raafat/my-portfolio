@@ -1,90 +1,103 @@
-const About = () => {
-  return (
-    <section id="about" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fadeInUp">
-          <h2 className="text-5xl font-bold text-slate-900 mb-6">
-            About <span className="text-gradient-warm">Me</span>
+const stats = [
+  { num: '4+', label: 'Projects Built' },
+  { num: '3+', label: 'Tech Stacks' },
+  { num: '2026', label: 'Graduation' },
+  { num: '∞', label: 'Curiosity' },
+]
+
+const About = () => (
+  <section id="about" className="py-28 relative overflow-hidden"
+    style={{ background: 'var(--ink-2)' }}>
+
+    {/* Section label */}
+    <div className="max-w-6xl mx-auto px-6">
+      <div className="flex items-center gap-4 mb-16">
+        <span className="text-xs font-bold tracking-widest" style={{ color: 'var(--acid)', fontFamily: 'DM Serif Display, serif' }}>02</span>
+        <div className="h-px flex-1 max-w-12" style={{ background: 'var(--wire-2)' }} />
+        <span className="text-xs tracking-widest uppercase" style={{ color: 'var(--chalk-3)', fontFamily: 'Inter, sans-serif' }}>About</span>
+      </div>
+
+      <div className="grid lg:grid-cols-2 gap-20 items-start">
+        {/* Left */}
+        <div>
+          <h2 className="font-display mb-8 leading-tight"
+            style={{
+              fontFamily: 'DM Serif Display, serif', fontWeight: 400,
+              fontSize: 'clamp(36px, 5vw, 60px)',
+              color: 'var(--chalk)', letterSpacing: '-0.02em',
+            }}>
+            Building interfaces<br />
+            <span style={{ color: 'var(--acid)' }}>people love</span><br />
+            to use.
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-700 mx-auto rounded-full"></div>
+
+          <p className="text-base leading-relaxed mb-6"
+            style={{ color: 'var(--chalk-3)', fontFamily: 'Inter, sans-serif' }}>
+            I'm a frontend developer and Computer Science student at Modern Academy Cairo,
+            graduating in 2026. My work lives at the intersection of clean engineering
+            and thoughtful design — I care deeply about how things feel, not just how they work.
+          </p>
+          <p className="text-base leading-relaxed mb-10"
+            style={{ color: 'var(--chalk-3)', fontFamily: 'Inter, sans-serif' }}>
+            From a real-time seizure detection dashboard to an AI-powered mental health platform,
+            I've shipped React applications that solve real problems. I write clean, maintainable
+            code and obsess over the details others skip.
+          </p>
+
+          <a href="#projects"
+            className="inline-flex items-center gap-2 text-sm font-semibold hover-line transition-colors duration-200"
+            style={{ color: 'var(--acid)', fontFamily: 'Inter, sans-serif' }}>
+            See my work →
+          </a>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="animate-fadeInLeft">
-            <h3 className="text-3xl font-bold text-slate-900 mb-6">
-              Front-end Developer with a 
-              <span className="text-gradient-cool"> Passion</span> for Innovation
-            </h3>
-            <p className="text-slate-600 mb-6 leading-relaxed text-lg">
-              I'm a dedicated front-end developer who loves creating engaging and intuitive user experiences. 
-              With a strong foundation in modern web technologies, I specialize in building responsive, 
-              performant, and accessible web applications.
-            </p>
-            <p className="text-slate-600 mb-8 leading-relaxed text-lg">
-              My journey in web development started with a curiosity for how things work on the web, 
-              and has evolved into a passion for crafting digital solutions that make a difference. 
-              I enjoy working with React, JavaScript, and modern CSS frameworks to bring designs to life.
-            </p>
-            
-            <div className="grid grid-cols-2 gap-6 mt-8">
-              <div className="bg-slate-50 hover:bg-blue-50 rounded-lg p-6 hover-lift transition-all duration-300 border border-slate-200">
-                <h4 className="font-bold text-slate-900 mb-2 text-lg">Experience</h4>
-                <p className="text-slate-600">Building modern web applications</p>
+        {/* Right */}
+        <div className="flex flex-col gap-6">
+          {/* Stats row */}
+          <div className="grid grid-cols-2 gap-4">
+            {stats.map((s, i) => (
+              <div key={i} className="card-border rounded-xl p-6"
+                style={{ background: 'var(--ink-3)' }}>
+                <div className="font-display text-4xl font-800 mb-1"
+                  style={{ fontFamily: 'DM Serif Display, serif', fontWeight: 400, color: 'var(--acid)' }}>
+                  {s.num}
+                </div>
+                <div className="text-xs uppercase tracking-wider"
+                  style={{ color: 'var(--chalk-3)', fontFamily: 'Inter, sans-serif' }}>
+                  {s.label}
+                </div>
               </div>
-              <div className="bg-slate-50 hover:bg-blue-50 rounded-lg p-6 hover-lift transition-all duration-300 border border-slate-200">
-                <h4 className="font-bold text-slate-900 mb-2 text-lg">Focus</h4>
-                <p className="text-slate-600">User experience & performance</p>
-              </div>
-              <div className="bg-slate-50 hover:bg-blue-50 rounded-lg p-6 hover-lift transition-all duration-300 border border-slate-200">
-                <h4 className="font-bold text-slate-900 mb-2 text-lg">Approach</h4>
-                <p className="text-slate-600">Clean, maintainable code</p>
-              </div>
-              <div className="bg-slate-50 hover:bg-blue-50 rounded-lg p-6 hover-lift transition-all duration-300 border border-slate-200">
-                <h4 className="font-bold text-slate-900 mb-2 text-lg">Goal</h4>
-                <p className="text-slate-600">Continuous learning & growth</p>
-              </div>
-            </div>
+            ))}
           </div>
 
-          <div className="relative animate-fadeInRight">
-            <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 shadow-lg border border-slate-200">
-              <h4 className="text-2xl font-bold text-slate-900 mb-8 text-center">My Expertise</h4>
-              <div className="space-y-6">
-                <div className="flex items-center group">
-                  <div className="w-6 h-6 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300"></div>
-                  <span className="text-slate-700 font-medium text-lg">Responsive Web Design</span>
+          {/* What I do */}
+          <div className="card-border rounded-xl p-6" style={{ background: 'var(--ink-3)' }}>
+            <h3 className="text-xs tracking-widest uppercase mb-5 font-semibold"
+              style={{ color: 'var(--chalk-3)', fontFamily: 'Inter, sans-serif' }}>
+              What I do
+            </h3>
+            <div className="flex flex-col gap-3">
+              {[
+                'Responsive React applications',
+                'Mobile-first UI with React Native',
+                'Performance & accessibility optimization',
+                'Design-to-code implementation',
+                'Real-time data visualization',
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                    style={{ background: 'var(--acid)' }} />
+                  <span className="text-sm" style={{ color: 'var(--chalk-2)', fontFamily: 'Inter, sans-serif' }}>
+                    {item}
+                  </span>
                 </div>
-                <div className="flex items-center group">
-                  <div className="w-6 h-6 bg-gradient-to-r from-blue-700 to-slate-600 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300"></div>
-                  <span className="text-slate-700 font-medium text-lg">Modern JavaScript (ES6+)</span>
-                </div>
-                <div className="flex items-center group">
-                  <div className="w-6 h-6 bg-gradient-to-r from-slate-600 to-slate-700 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300"></div>
-                  <span className="text-slate-700 font-medium text-lg">React Development</span>
-                </div>
-                <div className="flex items-center group">
-                  <div className="w-6 h-6 bg-gradient-to-r from-slate-700 to-blue-600 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300"></div>
-                  <span className="text-slate-700 font-medium text-lg">UI/UX Implementation</span>
-                </div>
-                <div className="flex items-center group">
-                  <div className="w-6 h-6 bg-gradient-to-r from-blue-600 to-slate-600 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300"></div>
-                  <span className="text-slate-700 font-medium text-lg">Performance Optimization</span>
-                </div>
-                <div className="flex items-center group">
-                  <div className="w-6 h-6 bg-gradient-to-r from-slate-600 to-blue-700 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300"></div>
-                  <span className="text-slate-700 font-medium text-lg">Cross-browser Compatibility</span>
-                </div>
-              </div>
+              ))}
             </div>
-            
-            {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full animate-pulse-slow"></div>
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-slate-600 to-slate-700 rounded-full animate-float"></div>
           </div>
         </div>
       </div>
-    </section>
-  )
-}
+    </div>
+  </section>
+)
 
 export default About

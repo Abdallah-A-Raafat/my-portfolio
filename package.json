@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@fontsource/dm-serif-display": "^5.2.8",
+    "@fontsource/inter": "^5.2.8",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },

@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="noise min-h-screen">
       <Header />
       <Hero />
       <About />
